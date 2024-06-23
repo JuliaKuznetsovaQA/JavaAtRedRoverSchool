@@ -33,15 +33,11 @@ public class HW6_1 {
 
         System.out.println("\n-------- Extra Task ---------");
         String s4 = "Посмотрите как Рите нравится ритм";
-        String str4 = s4.toLowerCase();
-        int ind = 0;
-        int start = 0;
-        while (ind != -1) {
-            ind = str4.indexOf("рит", start);
-            if (ind != -1) {
-                System.out.println(ind);
+        s4 = s4.toLowerCase();
+        int index = s4.indexOf("рит");
+        while (index != -1) {
+            System.out.println(index);
+            index = s4.indexOf("рит", index + 1);
             }
-            start = ind + 1;
-        }
     }
 }
