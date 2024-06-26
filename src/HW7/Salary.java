@@ -1,5 +1,7 @@
 package HW7;
 
+import HW7.employees.Employee;
+
 public class Salary {
     static int getSum(Employee[] employeeArray) {
         int sum = 0;
