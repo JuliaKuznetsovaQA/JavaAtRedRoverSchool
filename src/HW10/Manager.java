@@ -1,12 +1,11 @@
 package HW10;
 
-public class Manager extends Worker{
+public final class Manager extends AbstractManager{
 
-    int numberOfSubordinates;
+    int coefficientValue = 3;
 
     public Manager(String name, double salary, int numberOfSubordinates) {
-        super(name, salary);
-        this.numberOfSubordinates = numberOfSubordinates;
+        super(name, salary, numberOfSubordinates);
     }
 
     public Manager(String name, double salary) {
@@ -17,17 +16,14 @@ public class Manager extends Worker{
         this(name, 0, 0);
     }
 
-    public int getNumberOfSubordinates() {
-        return numberOfSubordinates;
-    }
-
-    public void setNumberOfSubordinates(int numberOfSubordinates) {
-        this.numberOfSubordinates = numberOfSubordinates;
+    @Override
+    public double getSalary() {
+        return super.getSalary() + super.getSalary() * getNumberOfSubordinates() / 100 * coefficientValue;
     }
 
     @Override
-    public double getSalary() {
-        return super.getSalary() + super.getSalary() * getNumberOfSubordinates() / 100 * 3;
+    protected double getBonus() {
+        return getBaseSalary() * getNumberOfSubordinates() / 100 * coefficientValue;
     }
 
     @Override

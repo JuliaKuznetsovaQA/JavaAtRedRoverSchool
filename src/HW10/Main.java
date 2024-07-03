@@ -13,7 +13,7 @@ public class Main {
         System.out.println(sasha.getSalary());
 
         Employee[] allEmployees = {julia, oleg, vika, sasha};
-        Manager[] allManagers = {julia, oleg, vika, sasha};
+        Manager[] allManagers = {julia, oleg};
 
         System.out.println(EmployeeUtils.getByName(allEmployees, "Oleg"));
         System.out.println(oleg);

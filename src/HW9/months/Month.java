@@ -1,26 +1,26 @@
 package HW9.months;
 
-public class Month {
+public final class Month {
 
-    private String month;
-    private int days;
-    private int workDays;
+    private final String name;
+    private final int totalDays;
+    private final int workingDays;
 
-    public Month(String month, int days, int workDays) {
-        this.month = month;
-        this.days = days;
-        this.workDays = workDays;
+    public Month(String name, int totalDays, int workingDays) {
+        this.name = name;
+        this.totalDays = totalDays;
+        this.workingDays = workingDays;
     }
 
-    public String getMonth() {
-        return month;
+    public String getName() {
+        return name;
     }
 
-    public int getDays() {
-        return days;
+    public int getTotalDays() {
+        return totalDays;
     }
 
-    public int getWorkDays() {
-        return workDays;
+    public int getWorkingDays() {
+        return workingDays;
     }
 }

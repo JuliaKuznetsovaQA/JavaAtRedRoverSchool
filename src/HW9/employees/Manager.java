@@ -2,8 +2,8 @@ package HW9.employees;
 
 import HW9.months.Month;
 
-public class Manager extends Employee {
-    private int numberOfSubordinates;
+public final class Manager extends BaseEmployee {
+    private final int numberOfSubordinates;
 
     public Manager(String name, int age, String gender, int dailySalary, int numberOfSubordinates) {
         super(name, age, gender, dailySalary);
@@ -12,12 +12,6 @@ public class Manager extends Employee {
 
     @Override
     public double getSalary(Month[] monthArray) {
-        double salary = 0;
-        for (int i = 0; i < monthArray.length; i++) {
-            salary += monthArray[i].getWorkDays() * this.getDailySalary();
-        }
-        double bonus = 0.01 * this.numberOfSubordinates;
-        salary += salary * bonus;
-        return salary;
+        return getBaseSalary(monthArray) * (1 + numberOfSubordinates * 0.01);
     }
 }

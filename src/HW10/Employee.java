@@ -1,6 +1,6 @@
 package HW10;
 
-public class Employee {
+public abstract class Employee {
     private String name;
     private double salary;
 
@@ -18,9 +18,7 @@ public class Employee {
         this.name = name;
     }
 
-    public double getSalary() {
-        return salary;
-    }
+    protected abstract double getSalary();
 
     public void setSalary(double salary) {
         this.salary = salary;

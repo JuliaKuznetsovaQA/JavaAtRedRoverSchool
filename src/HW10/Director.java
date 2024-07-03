@@ -1,21 +1,19 @@
 package HW10;
 
-public class Director extends Manager{
+public final class Director extends AbstractManager{
+
+    int coefficientValue = 9;
 
     public Director(String name, double salary, int numberOfSubordinates) {
         super(name, salary, numberOfSubordinates);
     }
 
     public Director(String name, double salary) {
-        super(name, salary);
-    }
-
-    public Director(String name) {
-        super(name);
+        super(name, salary, 0);
     }
 
     @Override
-    public double getSalary() {
-        return super.getSalary() + super.getSalary() * getNumberOfSubordinates() / 100 * 9;
+    protected double getBonus() {
+        return getBaseSalary() * getNumberOfSubordinates() / 100 * coefficientValue;
     }
 }
