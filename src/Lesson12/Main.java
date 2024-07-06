@@ -34,6 +34,25 @@ public class Main {
         people1.put("2x", new Person("Petr"));
         people1.put("20x", new Person("Nikolay"));
         System.out.println(people1);
+        System.out.println(people1.get("20x"));
+        System.out.println(people1.getOrDefault("2000xxx", new Person("AAAA")));
+        System.out.println(people1);
+
+        System.out.println("================================");
+
+        for (String key: people1.keySet()) {
+            System.out.println("Key = " + key + ", value = " + people1.get(key));
+        }
+
+        System.out.println("================================");
+
+        Map<Character, Integer> charCounts = new HashMap<>();
+        String str = "0ainmvaiyryu7b7tcoa8wudmc'-a-[w0aj998esytbvtrgvfvanoasaecni-0lkoihyt7bay7ycteledai";
+        for (char c : str.toCharArray()) {
+            int currentCount = charCounts.getOrDefault(c, 0);
+            charCounts.put(c, currentCount + 1);
+        }
+        System.out.println(charCounts);
 
     }
 
