@@ -1,5 +1,7 @@
 package Lesson16;
 
+import java.util.List;
+
 public class Comparators {
 
     public static final GenericComparator<Integer> MORE = new GenericComparator<Integer>() {
@@ -26,4 +28,15 @@ public class Comparators {
             return 0;
         }
     };
+
+    public static  <T> T findUltimateGeneric(List<T> elements, GenericComparator<T> comparator) {
+        if (elements.size() == 0) return null;
+        T champion = elements.get(0);
+        for (int i = 0; i < elements.size(); i++) {
+            if (comparator.compare(elements.get(i), champion) > 0) {
+                champion = elements.get(i);
+            }
+        }
+        return champion;
+    }
 }
