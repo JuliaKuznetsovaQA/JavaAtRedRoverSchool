@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Comparators {
 
-    public static <T> T findBest(List<T> elements, Comparator<T> comparator) {
+    public static <T> T findBest(List<? extends T> elements, Comparator<? super T> comparator) {
         if (elements.isEmpty()) return null;
         T champion = elements.get(0);
         for (int i = 0; i < elements.size(); i++) {

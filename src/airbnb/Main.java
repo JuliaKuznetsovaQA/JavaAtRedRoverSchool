@@ -23,11 +23,24 @@ public class Main {
         all.addAll(houses);
         all.addAll(rooms);
 
-        System.out.println(Comparators.findBest(houses, Comparators.BIGGEST_YARD).getInfo());
-        System.out.println(Comparators.findBest(houses, Comparators.BIGGEST_YARD.reverse()).getInfo());
+//        System.out.println(Comparators.findBest(houses, Comparators.BIGGEST_YARD).getInfo());
+//        System.out.println(Comparators.findBest(houses, Comparators.BIGGEST_YARD.reverse()).getInfo());
+//
+//        System.out.println(Comparators.findBest(all, Comparators.MORE_EXPENSIVE).getInfo());
+//        System.out.println(Comparators.findBest(all, Comparators.MORE_EXPENSIVE.reverse()).getInfo());
+//
+//        System.out.println(Comparators.findBest(houses, Comparators.MORE_EXPENSIVE).getInfo());
 
-        System.out.println(Comparators.findBest(all, Comparators.MORE_EXPENSIVE).getInfo());
-        System.out.println(Comparators.findBest(all, Comparators.MORE_EXPENSIVE.reverse()).getInfo());
+        /*
+        List<House> не является подклассом List<Place>, хотя House - подкласс Place
+         */
 
+        printList(rooms);
+    }
+
+    public static void printList(List<? extends Place> places) {
+        for (Place place: places) {
+            System.out.println(place.getInfo());
+        }
     }
 }
